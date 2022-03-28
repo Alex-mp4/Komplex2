@@ -15,9 +15,6 @@ public class KomplexTest {
         Komplex c = a.add(b);
         Komplex d = new Komplex(7,3);
 
-        c = c.toString();
-        d = d.toString();
-
         System.out.println(c);
         if (c.equals(d)){
             System.out.println("add funkar!!");

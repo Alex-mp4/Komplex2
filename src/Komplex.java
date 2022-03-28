@@ -22,6 +22,14 @@ public class Komplex {
         return Objects.hash(re, im);
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Komplex komplex = (Komplex) o;
+        return Double.compare(komplex.re, re) == 0 && Double.compare(komplex.im, im) == 0;
+    }
+
     public Komplex add(Komplex b) {
         return new Komplex(re + b.re, im + b.im);
     }
@@ -31,6 +39,6 @@ public class Komplex {
     }
 
     public double arg() {
-        return 0;
+        return (Math.atan(im / re));
     }
 }
