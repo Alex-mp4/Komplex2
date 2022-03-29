@@ -85,7 +85,9 @@ public class Mandelbrot implements Runnable{
         Komplex zn = new Komplex(0,0);
         while (count < maxIter && (Math.sqrt(zn.re*zn.re+zn.im*zn.im)) < 2) {
             // Do calculations here!
+            Komplex w = z.multiply(zn);
             count++;
+            return mandelbrot(z);
         }
 
         if (count == maxIter)
